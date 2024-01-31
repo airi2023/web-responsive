@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+/* 共通 ---------------------------*/
+body{
+    margin: 0;
+    background-color: #eee;
+}
+
+img{
+    display: block;
+}
+
+/* 横幅と左右の余白 */
+.w-container{
+    width: min(92%,1166px);
+    margin: auto;
+}
+
+/* ヘッダー ---------------------------*/
+.header{
+    height: 112px;
+    background-color: #fff;
+}
+
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+/* 要素３つ以上の場合の両端配置*/
+/*ロゴ右に自動余白*/
+/* .site{
+    margin-right: auto;
+} */
+
+
+/* ナビ */
+.navbtn{
+    padding: 0;/*buttonタグのデフォルト装飾解除*/
+    outline: none;/*装飾解除*/
+    border: none;/*装飾解除*/
+    background: transparent;/*装飾解除*/
+    cursor: pointer;
+    color: #aaa;
+    font-size: 30px;
+}
