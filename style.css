@@ -1,28 +1,57 @@
 @charset "UTF-8";
 
 /* 共通 ---------------------------*/
-body{
+body {
     margin: 0;
     background-color: #eee;
+    color: #222;
+    font-family: sans-serif;
 }
 
-img{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+p {
+    line-height: 1.8;
+}
+
+a {
+    /*デフォルトの青色解除、親と同じ色にする*/
+    color: inherit;
+    /* 下線無し */
+    text-decoration: none;
+}
+
+/* ホバーで明度下げて、色濃くする */
+a:hover {
+    filter: brightness(90%) contrast(120%);
+}
+
+img {
     display: block;
 }
 
 /* 横幅と左右の余白 */
-.w-container{
-    width: min(92%,1166px);
+.w-container {
+    width: min(92%, 1166px);
     margin: auto;
 }
 
+
 /* ヘッダー ---------------------------*/
-.header{
+.header {
     height: 112px;
     background-color: #fff;
 }
 
-.header-container{
+.header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -37,12 +66,60 @@ img{
 
 
 /* ナビ */
-.navbtn{
-    padding: 0;/*buttonタグのデフォルト装飾解除*/
-    outline: none;/*装飾解除*/
-    border: none;/*装飾解除*/
-    background: transparent;/*装飾解除*/
+.navbtn {
+    padding: 0;
+    /*buttonタグのデフォルト装飾解除*/
+    outline: none;
+    /*装飾解除*/
+    border: none;
+    /*装飾解除*/
+    background: transparent;
+    /*装飾解除*/
     cursor: pointer;
     color: #aaa;
     font-size: 30px;
+}
+
+/* メイン画像 */
+.hero {
+    height: 650px;
+    background-image: url(img/hero.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+/* テキスト */
+.hero-container {
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    height: 100%;
+}
+
+.hero h1 {
+    margin-bottom: 42px;
+    font-family: "Montserrat,sans-serif";
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 1.3;
+    text-align: center;
+    font-size: clamp(48px, 5vw, 68px);
+    min-height: 0vw;
+}
+
+.hero p {
+    margin-bottom: 72px;
+}
+
+.btn {
+    display: block;
+    width: 260px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    background-color: #e8b368;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    text-shadow: 0 0 6px #00000052;
 }
