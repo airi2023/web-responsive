@@ -2,10 +2,10 @@
 
 /* 共通 ---------------------------*/
 body {
-  margin: 0;
-  background-color: #eee;
-  color: #222;
-  font-family: sans-serif;
+    margin: 0;
+    background-color: #eee;
+    color: #222;
+    font-family: sans-serif;
 }
 
 h1,
@@ -17,48 +17,48 @@ h6,
 p,
 figure,
 ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 p {
-  line-height: 1.8;
+    line-height: 1.8;
 }
 
 a {
-  /*デフォルトの青色解除、親と同じ色にする*/
-  color: inherit;
-  /* 下線無し */
-  text-decoration: none;
+    /*デフォルトの青色解除、親と同じ色にする*/
+    color: inherit;
+    /* 下線無し */
+    text-decoration: none;
 }
 
 /* ホバーで明度下げて、色濃くする */
 a:hover {
-  filter: brightness(90%) contrast(120%);
+    filter: brightness(90%) contrast(120%);
 }
 
 img {
-  display: block;
+    display: block;
 }
 
 /* 横幅と左右の余白 */
 .w-container {
-  width: min(92%, 1166px);
-  margin: auto;
+    width: min(92%, 1166px);
+    margin: auto;
 }
 
 /* ヘッダー ---------------------------*/
 .header {
-  height: 112px;
-  background-color: #fff;
+    height: 112px;
+    background-color: #fff;
 }
 
 .header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
 }
 
 /* 要素３つ以上の場合の両端配置*/
@@ -69,155 +69,215 @@ img {
 
 /* ナビ */
 .navbtn {
-  /*buttonタグのデフォルト装飾解除*/
-  padding: 0;
-  /*装飾解除*/
-  outline: none;
-  /*装飾解除*/
-  border: none;
-  /*装飾解除*/
-  background: transparent;
-  cursor: pointer;
-  color: #aaa;
-  font-size: 30px;
+    /*buttonタグのデフォルト装飾解除*/
+    padding: 0;
+    /*装飾解除*/
+    outline: none;
+    /*装飾解除*/
+    border: none;
+    /*装飾解除*/
+    background: transparent;
+    cursor: pointer;
+    color: #aaa;
+    font-size: 30px;
 }
 
 .open .navbtn {
-  z-index: 110;
-  color: #fff;
-  position: fixed;
-  right: 30px;
+    z-index: 110;
+    color: #fff;
+    position: fixed;
+    right: 30px;
 }
 
 .navbtn .fa-bars {
-  display: revert;
+    display: revert;
 }
 
 .open .navbtn .fa-bars {
-  display: none;
+    display: none;
 }
 
 /* ×ボタン */
 .navbtn .fa-times {
-  display: none;
+    display: none;
 }
 
 .open .navbtn .fa-times {
-  display: revert;
+    display: revert;
 }
 
 
 /* 色 */
-.hamburger-inner,.hamburger-inner::before,.hamburger-inner::after,
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after,
 .hamburger.is-active .hamburger-inner,
 .hamburger.is-active .hamburger-inner::before,
-.hamburger.is-active .hamburger-inner::after{
-  background-color: currentColor;
+.hamburger.is-active .hamburger-inner::after {
+    background-color: currentColor;
 }
 
 
 /* ナビ　PC時 */
-@media(min-width:768px){
-  .navbtn{
-    display: none;
-  }
+@media(min-width:768px) {
+    .navbtn {
+        display: none;
+    }
 
-  .nav ul{
-    display: flex;
-    gap: 40px;
-    color: #707070;
-  }
+    .nav ul {
+        display: flex;
+        gap: 40px;
+        color: #707070;
+    }
 }
 
 
 /* ナビ　スマホ時 */
 @media (max-width: 767px) {
-  .nav {
-    position: fixed;
-    inset: 0 -100% 0 100%;
-    z-index: 100;
-    background-color: #4e483ae6;
-    transition: 0.3s;
-  }
+    .nav {
+        position: fixed;
+        inset: 0 -100% 0 100%;
+        z-index: 100;
+        background-color: #4e483ae6;
+        transition: 0.3s;
+    }
 
-  /* ナビ開いてるとき　htmlタグにクラス「open」つく */
-  .open nav {
-    transform: translate(-100%, 0);
-  }
+    /* ナビ開いてるとき　htmlタグにクラス「open」つく */
+    .open nav {
+        transform: translate(-100%, 0);
+    }
 
-  .open body {
-    position: fixed;
-    overflow: hidden;
-  }
+    .open body {
+        position: fixed;
+        overflow: hidden;
+    }
 
-  .nav ul {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    gap: 40px;
-    color: #fff;
-  }
+    .nav ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        gap: 40px;
+        color: #fff;
+    }
 }
 
 
 /* メイン画像 */
 .hero {
-  height: 650px;
-  background-image: url(img/hero.jpg);
-  background-position: center;
-  background-size: cover;
+    height: 650px;
+    background-image: url(img/hero.jpg);
+    background-position: center;
+    background-size: cover;
 }
 
 /* テキスト */
 .hero-container {
-  display: grid;
-  justify-items: center;
-  align-content: center;
-  height: 100%;
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    height: 100%;
 }
 
 .hero h1 {
-  margin-bottom: 42px;
-  font-family: "Montserrat,sans-serif";
-  font-size: 48px;
-  font-weight: 400;
-  line-height: 1.3;
-  text-align: center;
-  font-size: clamp(48px, 5vw, 68px);
-  min-height: 0vw;
+    margin-bottom: 42px;
+    font-family: "Montserrat,sans-serif";
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 1.3;
+    text-align: center;
+    font-size: clamp(48px, 5vw, 68px);
+    min-height: 0vw;
 }
 
 .hero p {
-  margin-bottom: 72px;
+    margin-bottom: 72px;
 }
 
 .btn {
-  display: block;
-  width: 260px;
-  padding: 10px;
-  box-sizing: border-box;
-  border-radius: 4px;
-  background-color: #e8b368;
-  color: #fff;
-  font-size: 18px;
-  text-align: center;
-  text-shadow: 0 0 6px #00000052;
+    display: block;
+    width: 260px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    background-color: #e8b368;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    text-shadow: 0 0 6px #00000052;
 }
 
 
-/* フッター */
-.footer{
+/* フッター -------------------------*/
+.footer {
     padding: 70px 0;
     background-color: #fff;
     color: #707070;
     font-size: 13px;
 }
 
-.footer-container{
+.footer-container {
     display: grid;
     gap: 50px;
-    justify-items: center;/*各列内のアイテムの横位置*/
+    justify-items: center;
+    /*各列内のアイテムの横位置*/
 }
 
+/* SNS */
+.footer-sns {
+    display: flex;
+    gap: 24px;
+    font-size: 24px;
+}
+
+.footer-sns a {
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    /* aspect-ratio: 1 / 1; */
+    background-color: #ccc;
+    color: #fff;
+    clip-path: circle(50%);
+}
+
+/* @supports not (aspect-ratio: 1/1) {
+    .footer-sns a {
+        height: 36px;
+    }
+} */
+
+
+/* ナビ */
+.footer-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+@media(min-width:768px) {
+    .footer-container {
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto auto;
+        gap: 20px;
+    }
+
+    .footer-container> .footer-site{
+        margin-bottom: 20px;
+    }
+
+    /* 左寄せ */
+    .footer-container>*:not(.footer-sns) {
+        justify-self: start;
+    }
+
+    /* 右寄せ */
+    .footer-container>.footer-sns {
+        grid-column: 2;
+        grid-row: 1/4;
+        justify-self: end;
+        align-self: center;
+    }
+}
