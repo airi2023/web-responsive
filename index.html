@@ -21,6 +21,9 @@
     <!-- リセットCSS -->
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css"> -->
 
+    <!-- ハンバーガーメニュー　アニメーション -->
+    <link href="dist/hamburgers.css" rel="stylesheet" />
+
     <!-- CSS読み込み -->
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -34,11 +37,30 @@
           </a>
         </div>
 
-        <button class="navbtn">
-          <i class="fa-solid fa-bars"></i>
+        <!-- <button
+        class="navbtn hamburgers hamburger--squeeze"
+        onClick="toggleNavState()"> -->
+        <button
+          class="navbtn hamburgers hamburger--squeeze"
+          onClick="document.querySelector('.navbtn').classList.toggle('is-active');document.querySelector('html').classList.toggle('open');"
+        >
+          <!-- <i class="fa-solid fa-bars"></i>
+          <i class="fa-solid fa-times"></i> -->
+          <span class="hamburger-box"
+            ><span class="hamburger-inner"></span
+          ></span>
+
           <!-- 非表示　スクリーンリーダー用 -->
           <span class="sr-only">MENU</span>
         </button>
+
+        <nav class="nav">
+          <ul>
+            <li><a href="index.html">ホーム</a></li>
+            <li><a href="content.html">サービス案内</a></li>
+            <li><a href="#">お問い合わせ</a></li>
+          </ul>
+        </nav>
       </div>
     </header>
 
@@ -49,5 +71,58 @@
         <a href="#" class="btn">無料で始める</a>
       </div>
     </section>
+
+    <footer class="footer">
+      <div class="footer-container w-container">
+        <div class="footer-site">
+          <a href="index.html">
+            <img src="img/logo.svg" alt="Boards" width="135" height="26" />
+          </a>
+        </div>
+
+        <ul class="footer-sns">
+          <li>
+            <a href="#">
+              <i class="fab fa-twitter"></i>
+              <span class="sr-only">Twitter</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <i class="fab fa-facebook"></i>
+              <span class="sr-only">Facebook</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fab fa-instagram"></i>
+              <span class="sr-only">Instagram</span>
+            </a>
+          </li>
+        </ul>
+
+        <ul class="footer-menu">
+          <li><a href="#">会社概要</a></li>
+          <li><a href="#">特定商取引法</a></li>
+          <li><a href="#">個人情報の取り扱い</a></li>
+          <li><a href="content.html">サービス案内</a></li>
+          <li><a href="#">お問い合わせ</a></li>
+        </ul>
+
+      <div class="footer-copy">
+        © title 2024 All Rights Reserved.
+      </div>
+
+      </div>
+    </footer>
+
+    <!-- ハンバーガーメニュー　アニメーション用・open時用のクラス -->
+    <!-- <script>
+      function toggleNavState() {
+        document.querySelector('.navbtn').classList.toggle('is-active');
+        document.querySelector('html').classList.toggle('open');
+      }
+    </script> -->
   </body>
 </html>
