@@ -40,6 +40,10 @@ a:hover {
 
 img {
     display: block;
+    /* オリジナルサイズ以上に拡大されるのを防ぐ */
+    max-width: 100%;
+    /* 縦横比保持 */
+    height: auto;
 }
 
 /* 横幅と左右の余白 */
@@ -67,7 +71,7 @@ img {
     margin-right: auto;
 } */
 
-/* ナビ */
+/* ナビ ---------------------------*/
 .navbtn {
     /*buttonタグのデフォルト装飾解除*/
     padding: 0;
@@ -118,7 +122,7 @@ img {
 }
 
 
-/* ナビ　PC時 */
+/* ナビ　PC時 ---------------------------*/
 @media(min-width:768px) {
     .navbtn {
         display: none;
@@ -132,7 +136,7 @@ img {
 }
 
 
-/* ナビ　スマホ時 */
+/* ナビ　スマホ時 ---------------------------*/
 @media (max-width: 767px) {
     .nav {
         position: fixed;
@@ -164,7 +168,7 @@ img {
 }
 
 
-/* メイン画像 */
+/* メイン画像 ---------------------------*/
 .hero {
     height: 650px;
     background-image: url(img/hero.jpg);
@@ -209,6 +213,21 @@ img {
 }
 
 
+/* 記事 -------------------------*/
+/* 全体*/
+.imgtext{
+    padding: clamp(90px,9vw,120px);
+    background-color: #fff;
+}
+
+/* タイトルとサブタイトル */
+.heading-decoration{
+    font-size: clamp(30px,3vw,40px);
+    min-height: 0vw;
+    font-weight: 400;
+}
+
+
 /* フッター -------------------------*/
 .footer {
     padding: 70px 0;
@@ -249,7 +268,7 @@ img {
 } */
 
 
-/* ナビ */
+/* フッターナビ */
 .footer-menu {
     display: flex;
     flex-wrap: wrap;
@@ -264,7 +283,7 @@ img {
         gap: 20px;
     }
 
-    .footer-container> .footer-site{
+    .footer-container>.footer-site {
         margin-bottom: 20px;
     }
 
