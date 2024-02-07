@@ -215,17 +215,76 @@ img {
 
 /* 記事 -------------------------*/
 /* 全体*/
-.imgtext{
-    padding: clamp(90px,9vw,120px);
+.imgtext {
+    padding: clamp(90px, 9vw, 120px);
     background-color: #fff;
 }
 
-/* タイトルとサブタイトル */
-.heading-decoration{
-    font-size: clamp(30px,3vw,40px);
+/* 記事間の重複余白をなくす */
+.imgtext + .imgtext{
+    padding-top: 0;
+}
+
+/* 内側のdiv */
+.imgtext-container {
+    display: flex;
+    /* 子要素を縦並び */
+    flex-direction: column;
+    gap: clamp(45px, 6vw, 80px);
+}
+
+/* タイトル */
+.heading-decoration {
+    font-size: clamp(30px, 3vw, 40px);
     min-height: 0vw;
     font-weight: 400;
 }
+
+/* 飾り下線 */
+.heading-decoration:after {
+    display: block;
+    content: '';
+    width: 160px;
+    height: 0px;
+    border-top: solid 1px #b72661;
+    margin-top: 0.6em;
+}
+
+/* サブタイトル */
+.heading-decoration+p {
+    margin-top: 1em;
+    margin-bottom: 2em;
+    color: #707070;
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;
+}
+
+/* PC時のみ */
+@media(min-width:768px) {
+    .imgtext-container {
+        /* 子要素を横並び */
+        flex-direction: row;
+        align-items: center;
+    }
+
+    /* 配置逆の記事 */
+    .imgtext-container.reverse {
+        /* 配置左右逆 */
+        flex-direction: row-reverse;
+    }
+
+    .imgtext-container>.text {
+        flex: 1;
+        /*17文字分の横幅以下にならないように指定*/
+        /* ブラウザのデフォルト16px×17文字＝272px */
+        min-width: 17em;
+    }
+
+    .imgtext-container>.img {
+        flex: 2;
+    }
+}
+
 
 
 /* フッター -------------------------*/
