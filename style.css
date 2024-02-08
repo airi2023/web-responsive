@@ -1,6 +1,10 @@
 @charset "UTF-8";
 
 /* 共通 ---------------------------*/
+:root {
+    --v-space: clamp(90px, 9vw, 120px);
+}
+
 body {
     margin: 0;
     background-color: #eee;
@@ -50,6 +54,7 @@ img {
 .w-container {
     width: min(92%, 1166px);
     margin: auto;
+    position: relative;
 }
 
 /* ヘッダー ---------------------------*/
@@ -216,12 +221,12 @@ img {
 /* 記事 -------------------------*/
 /* 全体*/
 .imgtext {
-    padding: clamp(90px, 9vw, 120px);
+    padding: var(--v-space) 0;
     background-color: #fff;
 }
 
 /* 記事間の重複余白をなくす */
-.imgtext + .imgtext{
+.imgtext+.imgtext {
     padding-top: 0;
 }
 
@@ -285,6 +290,130 @@ img {
     }
 }
 
+
+/* 記事一覧 -------------------------*/
+/* セクション全体 */
+.posts {
+    padding: var(--v-space) 0;
+    background-color: #f3f1ed;
+}
+
+/* 見出し */
+.heading {
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(40px, 5.2vw, 70px);
+    min-height: 0vw;
+    font-weight: 300;
+    position: absolute;
+    /*変数+0.6emの部分は半角スペース必須*/
+    /*topの値をマイナスにしたいので、calc()内で「*-1」している*/
+    top: calc((var(--v-space) + 0.6em)*-1);
+}
+
+/* 見出し　日本語部分 */
+.heading span {
+    display: block;
+    /*縦並び*/
+    color: #666;
+    font-size: 18px;
+}
+
+/* 記事のコンテナ */
+.posts-container {
+    display: grid;
+    /* 2列、均等幅 */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 31px 25px;
+}
+
+/* 各記事 ------*/
+/* 画像 */
+.post img {
+    /* 縦横比 */
+    aspect-ratio: 3/2;
+    object-fit: cover;
+    /* aspect-ratioを反映するために、幅指定 */
+    width: 100%;
+}
+
+/* safari14以前など、aspect-ratio未対応の場合 */
+@supports not(aspect-ratio:3/2) {
+    .post img {
+        height: 180px;
+    }
+}
+
+/* 各記事全体リンク */
+.post a {
+    display: block;
+}
+
+/* 見出し */
+.post h3 {
+    margin: 1em 0 0.5em;
+    font-size: clamp(12px 2vw, 20px);
+    min-height: 0vw;
+}
+
+/* 本文 */
+.post p {
+    max-width: 20em;
+    font-size: clamp(10px, 1.6vw, 14px);
+    min-height: 0vw;
+}
+
+/* アイテムの配置指定する場合 --------------------*/
+/* grid-column=横、grid-row=縦 */
+/* 横1列目から、横２行分「span 2」 */
+/* 縦1行目から、縦２行分「span 2」 */
+
+/* .post:nth-of-type(1)でも同じ */
+/* .posts-container> :nth-child(1) {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+} */
+
+/* .posts-container > :nth-child(1) img{
+    aspect-ratio: 3/2.5;
+} */
+/* アイテムの配置指定する場合 --------------------*/
+
+
+/* @mediaで列数指定しない方法 --------------------*/
+/* 最小幅200pxで表示したときのｺﾝﾃﾅの横幅に収まる数＝横に並ぶ列の数 */
+/* auto-fit＝列数が少ない時、空欄ができないようにする。minmax(200px,1fr)＝最小幅、最大幅1fr(全幅) */
+/*auto-fit=空欄ができない、3列のまま。auto-fill=空欄ができる、空の列が作成され4列になる*/
+/* .posts-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+} */
+/* @mediaで列数指定しない方法 --------------------*/
+
+
+/* PC時 */
+/* 3列、均等幅 */
+/* @media(min-width:768px) {
+    .posts-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+} */
+
+/* フレックスボックスで並べる場合 */
+/* 記事のコンテナ */
+/* .posts-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.posts-container > * {
+    width: 50%;
+    padding: 0 12.5px 32px;
+    box-sizing: border-box;
+}
+@media(min-width:768px) {
+    .posts-container  > *{
+        width: 33.33%;
+    }
+} */
 
 
 /* フッター -------------------------*/
