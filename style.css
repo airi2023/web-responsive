@@ -321,12 +321,21 @@ img {
 /* 記事のコンテナ */
 .posts-container {
     display: grid;
-    /* 2列、均等幅 */
+    /* SP時 2列、均等幅 */
     grid-template-columns: repeat(2, 1fr);
     gap: 31px 25px;
 }
 
 /* 各記事 ------*/
+/* PC時のみ */
+@media(min-width:768px) {
+    /* PC時 3列 */
+    .posts-container{
+        grid-template-columns: repeat(3,1fr);
+    }
+
+}
+
 /* 画像 */
 .post img {
     /* 縦横比 */
