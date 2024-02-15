@@ -1,15 +1,159 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
-    <title>Boards</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>サービス案内｜Boards</title>
 
-<body>
-    
-</body>
+    <!-- Googleフォント -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- FontAwesome -->
+    <link
+      href="https://use.fontawesome.com/releases/v6.2.0/css/all.css"
+      rel="stylesheet"
+    />
+
+    <!-- リセットCSS -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css"> -->
+
+    <!-- ハンバーガーメニュー　アニメーション -->
+    <link href="dist/hamburgers.css" rel="stylesheet" />
+
+    <!-- CSS読み込み -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- ヘッダー（ロゴ・ナビ） -->
+    <header class="header">
+      <div class="header-container w-container">
+        <div class="site">
+          <a href="index.html">
+            <img src="img/logo.svg" alt="Boards" width="135" height="26" />
+          </a>
+        </div>
+
+        <!-- <button
+        class="navbtn hamburgers hamburger--squeeze"
+        onClick="toggleNavState()"> -->
+        <button
+          class="navbtn hamburgers hamburger--squeeze"
+          onClick="document.querySelector('.navbtn').classList.toggle('is-active');document.querySelector('html').classList.toggle('open');"
+        >
+          <!-- <i class="fa-solid fa-bars"></i>
+          <i class="fa-solid fa-times"></i> -->
+          <span class="hamburger-box"
+            ><span class="hamburger-inner"></span
+          ></span>
+
+          <!-- 非表示　スクリーンリーダー用 -->
+          <span class="sr-only">MENU</span>
+        </button>
+
+        <nav class="nav">
+          <ul>
+            <li><a href="index.html">ホーム</a></li>
+            <li><a href="content.html">サービス案内</a></li>
+            <li><a href="#">お問い合わせ</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- ヘッダー（ロゴ・ナビ）ここまで -->
+
+    <!-- 全体 メイン画像・記事 ここから-->
+    <article class="entry">
+      <!-- メイン画像 -->
+      <figure class="entry-img">
+        <img src="img/service.jpg" alt="" width="1600" height="470" />
+      </figure>
+      <!-- メイン画像ここまで -->
+
+      <!-- 記事ここから -->
+      <div class="w-container">
+        <!-- 見出し -->
+        <h1 class="heading-decoration">サービス案内</h1>
+        <p>Services</p>
+
+        <!-- 本文 -->
+        <div class="entry-container">
+          <p>
+            ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+          </p>
+          <p>
+            ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+          </p>
+          <p>
+            ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+          </p>
+          <p>
+            ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+          </p>
+          <p>
+            ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+          </p>
+        </div>
+        <!-- 本文ここまで -->
+      </div>
+      <!-- 記事全体ここまで -->
+    </article>
+    <!-- 全体 メイン画像・記事 ここまで -->
+
+    <!-- フッター -->
+    <footer class="footer">
+      <div class="footer-container w-container">
+        <div class="footer-site">
+          <a href="index.html">
+            <img src="img/logo.svg" alt="Boards" width="135" height="26" />
+          </a>
+        </div>
+
+        <ul class="footer-sns">
+          <li>
+            <a href="#">
+              <i class="fab fa-twitter"></i>
+              <span class="sr-only">Twitter</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <i class="fab fa-facebook"></i>
+              <span class="sr-only">Facebook</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fab fa-instagram"></i>
+              <span class="sr-only">Instagram</span>
+            </a>
+          </li>
+        </ul>
+
+        <ul class="footer-menu">
+          <li><a href="#">会社概要</a></li>
+          <li><a href="#">特定商取引法</a></li>
+          <li><a href="#">個人情報の取り扱い</a></li>
+          <li><a href="content.html">サービス案内</a></li>
+          <li><a href="#">お問い合わせ</a></li>
+        </ul>
+
+        <div class="footer-copy">© title 2024 All Rights Reserved.</div>
+      </div>
+    </footer>
+    <!-- フッターここまで -->
+
+    <!-- ハンバーガーメニュー　アニメーション用・open時用のクラス -->
+    <!-- <script>
+      function toggleNavState() {
+        document.querySelector('.navbtn').classList.toggle('is-active');
+        document.querySelector('html').classList.toggle('open');
+      }
+    </script> -->
+  </body>
 </html>

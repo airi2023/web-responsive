@@ -126,53 +126,6 @@ img {
     background-color: currentColor;
 }
 
-
-/* ナビ　PC時 ---------------------------*/
-@media(min-width:768px) {
-    .navbtn {
-        display: none;
-    }
-
-    .nav ul {
-        display: flex;
-        gap: 40px;
-        color: #707070;
-    }
-}
-
-
-/* ナビ　スマホ時 ---------------------------*/
-@media (max-width: 767px) {
-    .nav {
-        position: fixed;
-        inset: 0 -100% 0 100%;
-        z-index: 100;
-        background-color: #4e483ae6;
-        transition: 0.3s;
-    }
-
-    /* ナビ開いてるとき　htmlタグにクラス「open」つく */
-    .open nav {
-        transform: translate(-100%, 0);
-    }
-
-    .open body {
-        position: fixed;
-        overflow: hidden;
-    }
-
-    .nav ul {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-        gap: 40px;
-        color: #fff;
-    }
-}
-
-
 /* メイン画像 ---------------------------*/
 .hero {
     height: 650px;
@@ -264,32 +217,6 @@ img {
     font-size: 18px;
 }
 
-/* PC時のみ */
-@media(min-width:768px) {
-    .imgtext-container {
-        /* 子要素を横並び */
-        flex-direction: row;
-        align-items: center;
-    }
-
-    /* 配置逆の記事 */
-    .imgtext-container.reverse {
-        /* 配置左右逆 */
-        flex-direction: row-reverse;
-    }
-
-    .imgtext-container>.text {
-        flex: 1;
-        /*17文字分の横幅以下にならないように指定*/
-        /* ブラウザのデフォルト16px×17文字＝272px */
-        min-width: 17em;
-    }
-
-    .imgtext-container>.img {
-        flex: 2;
-    }
-}
-
 
 /* 記事一覧 -------------------------*/
 /* セクション全体 */
@@ -326,16 +253,9 @@ img {
     gap: 31px 25px;
 }
 
+
+
 /* 各記事 ------*/
-/* PC時のみ */
-@media(min-width:768px) {
-    /* PC時 3列 */
-    .posts-container{
-        grid-template-columns: repeat(3,1fr);
-    }
-
-}
-
 /* 画像 */
 .post img {
     /* 縦横比 */
@@ -425,6 +345,16 @@ img {
 } */
 
 
+/* 下層ページ 「サービス案内」-------------------------*/
+/* 記事 */
+.entry{
+    padding-bottom: var(--v-space);
+    background-color: #fff;
+}
+
+
+
+
 /* フッター -------------------------*/
 .footer {
     padding: 70px 0;
@@ -473,7 +403,57 @@ img {
     gap: 20px;
 }
 
+
+
+/* スマホ時 ---------------------------*/
+@media (max-width: 767px) {
+
+    /* ナビ ---------------------------*/
+    .nav {
+        position: fixed;
+        inset: 0 -100% 0 100%;
+        z-index: 100;
+        background-color: #4e483ae6;
+        transition: 0.3s;
+    }
+
+    /* ナビ開いてるとき　htmlタグにクラス「open」つく */
+    .open nav {
+        transform: translate(-100%, 0);
+    }
+
+    .open body {
+        position: fixed;
+        overflow: hidden;
+    }
+
+    .nav ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        gap: 40px;
+        color: #fff;
+    }
+}
+
+
+/* PC時 ---------------------------*/
 @media(min-width:768px) {
+
+    /* ナビ ---------------------------*/
+    .navbtn {
+        display: none;
+    }
+
+    .nav ul {
+        display: flex;
+        gap: 40px;
+        color: #707070;
+    }
+
+    /* フッター -------------------------------*/
     .footer-container {
         grid-template-columns: auto auto;
         grid-template-rows: auto auto auto;
@@ -496,4 +476,38 @@ img {
         justify-self: end;
         align-self: center;
     }
+
+
+    /* トップページ 各記事 --------------------*/
+    .imgtext-container {
+        /* 子要素を横並び */
+        flex-direction: row;
+        align-items: center;
+    }
+
+    /* 配置逆の記事 */
+    .imgtext-container.reverse {
+        /* 配置左右逆 */
+        flex-direction: row-reverse;
+    }
+
+    .imgtext-container>.text {
+        flex: 1;
+        /*17文字分の横幅以下にならないように指定*/
+        /* ブラウザのデフォルト16px×17文字＝272px */
+        min-width: 17em;
+    }
+
+    .imgtext-container>.img {
+        flex: 2;
+    }
+
+    /* トップページ 記事一覧 ----------------------*/
+    /*  PC時 3列  */
+    .posts-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+
+
 }
