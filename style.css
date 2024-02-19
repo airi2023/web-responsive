@@ -89,7 +89,8 @@ img {
 /* ヘッダー ---------------------------*/
 .header {
     height: 112px;
-    background-color: #fff;
+    /* background-color: #fff; */
+    background-color: #f9e5de;
 }
 
 .header-container {
@@ -157,9 +158,12 @@ img {
 
 /* メイン画像 ---------------------------*/
 .hero {
+    /* height: 650px; */
+    /* background-image: url(img/hero.jpg); */
+    /* background-position: center; */
     height: 650px;
-    background-image: url(img/hero.jpg);
-    background-position: center;
+    background-image: url(img/main1.jpg);
+    background-position: right 10% center;
     background-size: cover;
 }
 
@@ -169,6 +173,7 @@ img {
     justify-items: center;
     align-content: center;
     height: 100%;
+    text-align: center;
 }
 
 .hero h1 {
@@ -472,7 +477,8 @@ img {
 /* フッター -------------------------*/
 .footer {
     padding: 70px 0;
-    background-color: #fff;
+    /* background-color: #fff; */
+    background-color: #f9e5de;
     color: #707070;
     font-size: 13px;
 }
@@ -590,6 +596,27 @@ img {
         justify-self: end;
         align-self: center;
     }
+
+    /* トップページ メイン画像 ---------------------------*/
+    .hero {
+        height: 850px;
+        background-image: url(img/main1.jpg);
+        background-position: right center;
+        background-size: cover;
+    }
+
+    .hero-container {
+        justify-items: flex-start;
+        text-align: left;
+    }
+
+    /* 見出し */
+    /* .hero h1 {
+        color: #fff;
+        background: rgba(172, 16, 79, 0.8);
+        display: block;
+        padding: 20px;
+    } */
 
 
     /* トップページ 各記事 --------------------*/
