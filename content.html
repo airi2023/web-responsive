@@ -70,7 +70,72 @@
     <article class="entry">
       <!-- メイン画像 -->
       <figure class="entry-img">
-        <img src="img/service.jpg" alt="" width="1600" height="470" />
+        <picture>
+          <!-- 上から順番に条件にあうものが表示。WebPはjpgよりも先に書く -->
+
+          <!-- PCファーストの場合 SP→タブレット→PC -->
+          <!-- 幅767px以下で（SP表示）、WebP対応なら表示 -->
+          <source
+            srcset="img/service800.webp"
+            media="(max-width: 767px)"
+            type="image/webp"
+            width="800"
+            height="235"
+          />
+          <!-- WebP非対応なら表示 -->
+          <source
+            srcset="img/service.jpg"
+            media="(max-width: 767px)"
+            width="800"
+            height="235"
+          />
+
+          <!-- 幅1024px以下で（タブレット表示）、WebP対応なら表示 -->
+          <source
+            srcset="img/service1600.webp"
+            media="(max-width: 1024px)"
+            type="image/webp"
+            width="1600"
+            height="470"
+          />
+          <!-- WebP非対応なら表示 -->
+          <source
+            srcset="img/service1600.jpg"
+            media="(max-width: 1024px)"
+            width="1600"
+            height="470"
+          />
+
+          <!-- 上記に当てはまらず(1025px以上、PC表示)、WebP対応なら表示 -->
+          <source
+            srcset="img/service.webp"
+            type="image/webp"
+            width="1920"
+            height="564"
+          />
+          <!-- WebP非対応なら表示 -->
+          <img src="img/service.jpg" alt="" width="1920" height="564" />
+        </picture>
+
+        <!-- モバイルファーストの場合 PC→タブレット→SP -->
+        <!-- <picture>
+          <source
+            srcset="img/service.webp"
+            media="(min-width: 1025px)"
+            type="image/webp"
+          />
+          <source srcset="img/service.jpg" media="(min-width: 1025px)" />
+
+          <source
+            srcset="img/service1600.webp"
+            media="(min-width: 768px)"
+            type="image/webp"
+          />
+          <source srcset="img/service1600.jpg" media="(min-width: 768px)" />
+
+          <source srcset="img/service800.webp" type="image/webp" />
+          <img src="img/service800.jpg" />
+        </picture> -->
       </figure>
       <!-- メイン画像ここまで -->
 
@@ -103,6 +168,44 @@
       <!-- 記事全体ここまで -->
     </article>
     <!-- 全体 メイン画像・記事 ここまで -->
+
+    <section class="plans">
+      <!-- 記事全体ここから -->
+      <div class="w-container">
+        <h2 class="heading">
+          Service Plans
+          <span>サービスプラン</span>
+        </h2>
+
+        <div class="plans-container">
+          <div class="plan">
+            <h3>Free</h3>
+            <p class="desc">
+              便利なオンラインツールをご利用いただける無料プランです。
+            </p>
+            <p class="price">無料</p>
+            <a href="#" class="btn">使ってみる</a>
+          </div>
+
+          <div class="plan">
+            <h3>Standard</h3>
+            <p class="desc">
+              厳選したツールをお届けするスタンダードプランです。
+            </p>
+            <p class="price">980円/月</p>
+            <a href="#" class="btn btn-accent">使ってみる</a>
+          </div>
+
+          <div class="plan">
+            <h3>Pro</h3>
+            <p class="desc">プロフェッショナルなツールの貸し出しにも対応したプロフェッショナルなプランです。</p>
+            <p class="price">2,800円/月</p>
+            <a href="#" class="btn btn-accent">使ってみる</a>
+          </div>
+        </div>
+      </div>
+      <!-- 記事全体ここまで -->
+    </section>
 
     <!-- フッター -->
     <footer class="footer">
@@ -155,5 +258,12 @@
         document.querySelector('html').classList.toggle('open');
       }
     </script> -->
+
+    <script>
+      var images = document.getElementsByTagName("img");
+      for(var i = 0; i < images.length; i++) {
+        images[i].loading = "eager";
+      }
+    </script>
   </body>
 </html>
