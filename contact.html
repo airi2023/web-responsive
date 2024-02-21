@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>お問い合わせ|Natural Radiance</title>
+
+    <!-- Googleフォント -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- FontAwesome -->
+    <link
+      href="https://use.fontawesome.com/releases/v6.2.0/css/all.css"
+      rel="stylesheet"
+    />
+
+    <!-- リセットCSS -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css"> -->
+
+    <!-- ハンバーガーメニュー　アニメーション -->
+    <link href="dist/hamburgers.css" rel="stylesheet" />
+
+    <!-- CSS読み込み -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body class="contact lower">
+    <!-- ヘッダー（ロゴ・ナビ） -->
+    <header class="header">
+      <div class="header-container w-container">
+        <div class="site">
+          <a href="index.html">
+            <img src="img/logo.png" alt="logo" width="200" height="26" />
+            <!-- Natural Radiance -->
+          </a>
+        </div>
+
+        <!-- <button
+        class="navbtn hamburgers hamburger--squeeze"
+        onClick="toggleNavState()"> -->
+        <button
+          class="navbtn hamburgers hamburger--squeeze"
+          onClick="document.querySelector('.navbtn').classList.toggle('is-active');document.querySelector('html').classList.toggle('open');"
+        >
+          <!-- <i class="fa-solid fa-bars"></i>
+          <i class="fa-solid fa-times"></i> -->
+          <span class="hamburger-box"
+            ><span class="hamburger-inner"></span
+          ></span>
+
+          <!-- 非表示　スクリーンリーダー用 -->
+          <span class="sr-only">MENU</span>
+        </button>
+
+        <nav class="nav">
+          <ul>
+            <li><a href="index.html">トップページ</a></li>
+            <li><a href="lp.html">商品情報</a></li>
+            <li><a href="contact.html">お問い合わせ</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- ヘッダー（ロゴ・ナビ）ここまで -->
+
+    <!-- メイン画像 -->
+    <section class="hero">
+      <div class="hero-container w-container">
+        <h1>Contact</h1>
+        <p>お問い合わせ</p>
+      </div>
+    </section>
+    <!-- メイン画像ここまで -->
+
+    <section class="contact-form">
+      <section class="imgtext">
+        <div class="imgtext-container w-container">
+          <div class="text">
+            <h2 class="heading-decoration">Contact Form</h2>
+            <p>お問い合わせ</p>
+            <p>
+              ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="form">
+        <div class="w-container">
+          <form action="">
+            <table class="form-table">
+              <tbody>
+                <tr>
+                  <th>氏名</th>
+                  <td>
+                    <input
+                      type="text"
+                      name="name"
+                      size="60"
+                      value=""
+                      placeholder="山田太郎"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <th>メールアドレス</th>
+                  <td>
+                    <input
+                      type="text"
+                      name="email"
+                      size="60"
+                      value=""
+                      placeholder="sample@sample.jp"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <th>電話番号</th>
+                  <td>
+                    <input
+                      type="text"
+                      name="tel"
+                      size="60"
+                      value=""
+                      placeholder="03-1234-5678"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <th>お問い合わせ内容</th>
+                  <td>
+                    <textarea
+                      name="content"
+                      cols="30"
+                      rows="10"
+                      placeholder="お問い合わせ内容を入力してください。"
+                    ></textarea>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <button type="submit" class="btn">送信</button>
+          </form>
+        </div>
+      </section>
+    </section>
+
+    <!-- フッター -->
+    <footer class="footer">
+      <div class="footer-container w-container">
+        <div class="footer-site">
+          <a href="index.html">
+            <img src="img/logo.png" alt="logo" width="200" height="26" />
+          </a>
+        </div>
+
+        <ul class="footer-sns">
+          <li>
+            <a href="#">
+              <i class="fab fa-twitter"></i>
+              <span class="sr-only">Twitter</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <i class="fab fa-facebook"></i>
+              <span class="sr-only">Facebook</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fab fa-instagram"></i>
+              <span class="sr-only">Instagram</span>
+            </a>
+          </li>
+        </ul>
+
+        <ul class="footer-menu">
+          <li><a href="index.html">トップページ</a></li>
+          <li><a href="lp.html">商品情報</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+        </ul>
+
+        <div class="footer-copy">
+          © Natural Radiance 2024 All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+    <!-- フッターここまで -->
+
+    <!-- ハンバーガーメニュー　アニメーション用・open時用のクラス -->
+    <!-- <script>
+      function toggleNavState() {
+        document.querySelector('.navbtn').classList.toggle('is-active');
+        document.querySelector('html').classList.toggle('open');
+      }
+    </script> -->
+  </body>
+</html>

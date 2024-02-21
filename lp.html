@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>商品情報|Natural Radiance</title>
+
+    <!-- Googleフォント -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- FontAwesome -->
+    <link
+      href="https://use.fontawesome.com/releases/v6.2.0/css/all.css"
+      rel="stylesheet"
+    />
+
+    <!-- リセットCSS -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css"> -->
+
+    <!-- ハンバーガーメニュー　アニメーション -->
+    <link href="dist/hamburgers.css" rel="stylesheet" />
+
+    <!-- CSS読み込み -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body class="lp lower">
+    <!-- ヘッダー（ロゴ・ナビ） -->
+    <header class="header">
+      <div class="header-container w-container">
+        <div class="site">
+          <a href="index.html">
+            <img src="img/logo.png" alt="logo" width="200" height="26" />
+            <!-- Natural Radiance -->
+          </a>
+        </div>
+
+        <!-- <button
+        class="navbtn hamburgers hamburger--squeeze"
+        onClick="toggleNavState()"> -->
+        <button
+          class="navbtn hamburgers hamburger--squeeze"
+          onClick="document.querySelector('.navbtn').classList.toggle('is-active');document.querySelector('html').classList.toggle('open');"
+        >
+          <!-- <i class="fa-solid fa-bars"></i>
+          <i class="fa-solid fa-times"></i> -->
+          <span class="hamburger-box"
+            ><span class="hamburger-inner"></span
+          ></span>
+
+          <!-- 非表示　スクリーンリーダー用 -->
+          <span class="sr-only">MENU</span>
+        </button>
+
+        <nav class="nav">
+          <ul>
+            <li><a href="index.html">トップページ</a></li>
+            <li><a href="lp.html">商品情報</a></li>
+            <li><a href="contact.html">お問い合わせ</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- ヘッダー（ロゴ・ナビ）ここまで -->
+    
+
+    <!-- 全体 メイン画像・記事 ここから-->
+    <article class="entry">
+      <!-- メイン画像 -->
+      <figure class="entry-img">
+        <picture>
+          <!-- 上から順番に条件にあうものが表示。WebPはjpgよりも先に書く -->
+
+          <!-- PCファーストの場合 SP→タブレット→PC -->
+          <!-- 幅767px以下で（SP表示）、WebP対応なら表示 -->
+          <source
+            srcset="img/main800-3.webp"
+            media="(max-width: 767px)"
+            type="image/webp"
+            width="800"
+            height="450"
+          />
+          <!-- WebP非対応なら表示 -->
+          <source
+            srcset="img/main800-3.jpg"
+            media="(max-width: 767px)"
+            width="800"
+            height="450"
+          />
+
+          <!-- 幅1024px以下で（タブレット表示）、WebP対応なら表示 -->
+          <source
+            srcset="img/main1600-2.webp"
+            media="(max-width: 1024px)"
+            type="image/webp"
+            width="1600"
+            height="900"
+          />
+          <!-- WebP非対応なら表示 -->
+          <source
+            srcset="img/main1600-2.jpg"
+            media="(max-width: 1024px)"
+            width="1600"
+            height="900"
+          />
+
+          <!-- 上記に当てはまらず(1025px以上、PC表示)、WebP対応なら表示 -->
+          <source
+            srcset="img/main1-2.webp"
+            type="image/webp"
+            width="1920"
+            height="1080"
+          />
+          <!-- WebP非対応なら表示 -->
+          <img src="img/main1-2.jpg" alt="" width="1920" height="1080" />
+        </picture>
+
+        <!-- モバイルファーストの場合 PC→タブレット→SP -->
+        <!-- <picture>
+          <source
+            srcset="img/service.webp"
+            media="(min-width: 1025px)"
+            type="image/webp"
+          />
+          <source srcset="img/service.jpg" media="(min-width: 1025px)" />
+
+          <source
+            srcset="img/service1600.webp"
+            media="(min-width: 768px)"
+            type="image/webp"
+          />
+          <source srcset="img/service1600.jpg" media="(min-width: 768px)" />
+
+          <source srcset="img/service800.webp" type="image/webp" />
+          <img src="img/service800.jpg" />
+        </picture> -->
+      </figure>
+      <!-- メイン画像ここまで -->
+
+      <!-- 記事ここから -->
+      <div class="w-container">
+        <!-- 見出し -->
+        <h1 class="heading-decoration">Items</h1>
+        <p>商品情報</p>
+
+        <!-- 本文 -->
+        <div class="entry-container">
+          <p>
+            ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+          </p>
+          <p>
+            ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+          </p>
+          <p>
+            ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+          </p>
+          <p>
+            ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+          </p>
+          <p>
+            ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+          </p>
+        </div>
+        <!-- 本文ここまで -->
+      </div>
+      <!-- 記事全体ここまで -->
+    </article>
+    <!-- 全体 メイン画像・記事 ここまで -->
+
+    <section class="plans">
+      <!-- 記事全体ここから -->
+      <div class="w-container">
+        <h2 class="heading">
+          Subscription Plans
+          <span>定期購入プラン</span>
+        </h2>
+
+        <div class="plans-container">
+          <div class="plan">
+            <h3>Free</h3>
+            <p class="desc">
+              初めての方限定の、基礎化粧品お試しセットです。
+            </p>
+            <p class="price">無料/初回のみ</p>
+            <a href="contact.html" class="btn">使ってみる</a>
+          </div>
+
+          <div class="plan">
+            <h3>Standard</h3>
+            <p class="desc">
+              厳選した基礎化粧品をお届けするスタンダードプランです。
+            </p>
+            <p class="price">5,000円/月</p>
+            <a href="contact.html" class="btn btn-accent">使ってみる</a>
+          </div>
+
+          <div class="plan">
+            <h3>Pro</h3>
+            <p class="desc">
+              ワンランク上のプロフェッショナルな基礎化粧品をお届けするプランです。
+            </p>
+            <p class="price">10,000円/月</p>
+            <a href="contact.html" class="btn btn-accent">使ってみる</a>
+          </div>
+        </div>
+      </div>
+      <!-- 記事全体ここまで -->
+    </section>
+
+    <!-- フッター -->
+    <footer class="footer">
+      <div class="footer-container w-container">
+        <div class="footer-site">
+          <a href="index.html">
+            <img src="img/logo.png" alt="logo" width="200" height="26" />
+          </a>
+        </div>
+
+        <ul class="footer-sns">
+          <li>
+            <a href="#">
+              <i class="fab fa-twitter"></i>
+              <span class="sr-only">Twitter</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <i class="fab fa-facebook"></i>
+              <span class="sr-only">Facebook</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fab fa-instagram"></i>
+              <span class="sr-only">Instagram</span>
+            </a>
+          </li>
+        </ul>
+
+        <ul class="footer-menu">
+          <li><a href="index.html">トップページ</a></li>
+          <li><a href="lp.html">商品情報</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+        </ul>
+
+        <div class="footer-copy">
+          © Natural Radiance 2024 All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+    <!-- フッターここまで -->
+
+    <!-- ハンバーガーメニュー　アニメーション用・open時用のクラス -->
+    <!-- <script>
+      function toggleNavState() {
+        document.querySelector('.navbtn').classList.toggle('is-active');
+        document.querySelector('html').classList.toggle('open');
+      }
+    </script> -->
+  </body>
+</html>
